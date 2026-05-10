@@ -2,22 +2,18 @@
 
 ## Markdown & Documentation Files
 
-When the user asks you to create documentation or markdown files, follow these rules:
+When the user asks you to create documentation or markdown files, follow these rules.
 
-1. **File location** — Create the file at `~/Documents/docs/<project-name>/<filename>.md` where `<project-name>` is the current project directory name and `<filename>` is a descriptive, kebab-case name for the feature or topic.
+First, create the file at the full path `~/Documents/docs/[project-name]/[filename].md` where `project-name` is the current project you're working on and `filename` is a descriptive name for the feature or topic.
 
-2. **Structure** — Include clear sections appropriate to the content. Default sections: Overview, Implementation Details, Design Decisions, Future Considerations, and any relevant code snippets or references.
+Second, structure the markdown with clear sections like Overview, Implementation Details, Design Decisions, Future Considerations, and any relevant code snippets or references.
 
-3. **Tags** — Extract tags that describe the content. These can relate to technology stack, feature area, decision type, status, or any other relevant category. Use your judgement on what tags make sense based on the content.
+Third, extract tags that describe the content — these could relate to technology stack, feature area, decision type, status, or any other relevant category. You decide what tags make sense based on the content.
 
-4. **Frontmatter** — At the end of the file, include a YAML frontmatter block with the tags:
-   ```yaml
-   ---
-   tags: [tag1, tag2, tag3]
-   ---
-   ```
+Fourth, at the end of the markdown file, include wiki-style links to tag files using double brackets syntax like `[[tag-name]]`.
 
-5. **Tags index** — After creating the file, update `~/Documents/docs/_tags-index.md`:
-   - For each new tag: add an entry with a brief description of what the tag means and a backlink to the file
-   - For existing tags: just add the backlink to the existing entry
-   - Keep the index organized and easy to scan
+Fifth, for each tag you use, check if a tag file exists at `~/Documents/docs/_tags/[tag-name].md`. If it doesn't exist, create it with a brief description of what that tag represents and include a section at the bottom called "Used in" with a backlink to the markdown file you just created, formatted as `[[project-name/filename]]`.
+
+Sixth, if a tag file already exists, update the "Used in" section to add the backlink to the new markdown file.
+
+Seventh, keep all tag files organized in the `~/Documents/docs/_tags/` folder. This way Obsidian will treat each tag as a node in your knowledge graph and show actual connections between feature markdowns and their related tags.
