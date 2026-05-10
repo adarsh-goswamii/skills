@@ -1,0 +1,8 @@
+*
+skills/DS_Store
+
+!.gitignore
+!skills/
+!skills/**
+skills/.DS_Store
+!CLAUDE.md
